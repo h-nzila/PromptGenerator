@@ -35,7 +35,7 @@ export const DELETE = async(req,{params})=>{
     try{
         await connectToDb();
         await Prompt.findByIdAndDelete(params.id)
-        new Response("Prompt deleted successfully", {status:200})
+        return new Response("Prompt deleted successfully", {status:200})
     }catch(error){
         return new Response('Failed to fetch all prompts', {status: 500})
     }
